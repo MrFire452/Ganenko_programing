@@ -3,5 +3,5 @@ try:
     Massa = int(input("Введите массу в киллограмах: "))
     tons = Massa // 1000
     print(f"Количество полных тонн: {tons}")
-except:
+except ValueError:
     print("Обнаружена ошибка, повторите попытку")
