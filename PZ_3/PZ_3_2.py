@@ -2,23 +2,25 @@
 # миллиграмм, 3 — грамм, 4 — тонна, 5 — центнер. Дан номер единицы массы (целое
 # число в диапазоне 1-5) и масса тела в этих единицах (вещественное число). Найти
 # массу тела в килограммах.
+try:
+    number = int(input("Введите номер еденицы массы(1-килограмм, 2-миллиграм, 3-грамм, 4-тонна, 5-центнер): "))
+    massa = float(input("Введите массу тела в выбраных еденицах: "))
 
-number = int(input("Введите номер еденицы массы(1-килограмм, 2-миллиграм, 3-грамм, 4-тонна, 5-центнер): "))
-massa = float(input("Введите массу тела в выбраных еденицах: "))
+    if number == 1:
+        massa_kg = massa
+    elif number == 2:
+        massa_kg = massa / 1000000
+    elif number == 3:
+        massa_kg = massa / 1000
+    elif number == 4:
+        massa_kg = massa * 1000
+    elif number == 5:
+        massa_kg = massa * 100
+    else:
+        massa_kg = None
+        print("Некоректный номер еденицы массы")
 
-if number == 1:
-    massa_kg = massa
-elif number == 2:
-    massa_kg = massa / 1000000
-elif number == 3:
-    massa_kg = massa / 1000
-elif number == 4:
-    massa_kg = massa * 1000
-elif number == 5:
-    massa_kg = massa * 100
-else:
-    massa_kg = None
-    print("Некоректный номер еденицы массы")
-
-if massa_kg is not None:
-    print(f"Масса тела в килограммах: {massa_kg} кг")
+    if massa_kg is not None:
+        print(f"Масса тела в килограммах: {massa_kg} кг")
+except ValueError:
+    print("Произошла ошибка, пожалуйста повторите попытку")
