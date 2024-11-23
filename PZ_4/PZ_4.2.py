@@ -3,8 +3,18 @@
 #предыдущего дня (P — вещественное, 0< P <50). По данному P определить, после
 #какого дня суммарный пробег лыжника за все дни превысит 200 км, и вывести
 #найденное количество дней K (целое) и суммарный пробег S (вещественное число).
-P = float(input("Введите значение P (в процентах, 0 < P < 50): "))
+try:
+    P = float(input("Введите значение P (в процентах, 0 < P < 50): "))
 
-daily_distance = 10.0
-total_distance = 0.0
-days = 0
+    daily_distance = 10
+    total_distance = 0
+    days = 0
+
+    while total_distance <= 200:
+        total_distance += daily_distance
+        days += 1
+        daily_distance *= (1 + P / 100)
+    print("Количество дней:", days)
+    print("Общая дистанция", total_distance)
+except ValueError:
+    print("Обнаружена ошибка. Повторите попытку")
