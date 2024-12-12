@@ -11,7 +11,7 @@ try:
 
     print("Нечетные числа в порядке возрастания индексов:")
     for number in numbers:
-        if number % 2 != 0:
+        if number % 2:
             print(number)
             K += 1
 
